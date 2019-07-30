@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+<!--모든 태그보다 우선순위 높다-->
+
+{%block contents%}
+
+<body>
+<br><br>
+    <h1>새로운 글을 쓸 수 있습니다</h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        <table>
+            {{form.as_ul}}
+        </table>
+        <br>
+        <input class= "btn btn-dark" type= "submit" value= "제출하기">
+    </form>
+
+    <!-- <div class="container">
+        <form action="{%url 'create'%}">
+            <h4>제목: </h4>
+            <input type="text" name="title">
+            <br><br>
+            <h4>본문: </h4>
+            <textarea cols=40 rows=10 name="body" value="제출하기"></textarea>
+            <br><br>
+            <input class="btn btn-dark" type="submit" value="제출하기">
+        </form>
+    </div> -->
+
+    </body>
+
+{%endblock%}
